@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Andromeda</title>
+        <link rel="stylesheet" href="style.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    </head>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof GLightbox !== "undefined") {
+                const lightbox = GLightbox({ selector: ".glightbox" });
+            }
+        });
+    </script>
+    <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">Andromeda</div>
+                <button class="hamburger" aria-label="Menu">&#9776;</button>
+                <div class="nav-links">
+                    <a href="#/" data-link>Andromeda</a>
+                    <a href="#/galeria" data-link>Galeria</a>
+                    <a href="#/atrakcje" data-link>Atrakcje</a>
+                    <a href="#/kontakt" data-link>Kontakt</a>
+                    <a href="#/inne" data-link>Inne nasze obiekty</a>
+                </div>
+            </div>
+        </nav>
+
+        <main id="app"></main>
+
+        <script src="router.js"></script>
+        <script src="script.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+                hamburger.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                });
+            });
+        </script>
+    </body>
+</html>
