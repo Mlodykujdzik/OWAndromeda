@@ -13,7 +13,7 @@ body {
     color: white;
     overflow-x: hidden;
 }
-/* Cały pasek górny */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -22,18 +22,16 @@ body {
     backdrop-filter: blur(5px);
     z-index: 999;
 }
-/* Pojemnik w którym znajdują się logo i linki */
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1800px;
     margin: auto;
     padding: 1rem;
     -webkit-tap-highlight-color: transparent;
     outline: none;
 }
-/* Napis ANDROMEDA po lewej stronie, animacja jego podkreślenia*/
+
 .logo {
     position: relative;
     color: white;
@@ -61,7 +59,7 @@ body {
         left: 50%;
     }
 }
-/* Linki nawigacyjne po prawej stronie, animacja ich podkreślenia */
+
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -80,7 +78,6 @@ body {
 }
 
 .nav-links a:active {
-    /* Aby na telefonie nie było syfu */
     color: #00bfff;
 }
 
@@ -101,7 +98,7 @@ body {
         width: 100%;
     }
 }
-/* Linki nawigacyjne po prawej stronie w wersji mobilnej */
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -120,7 +117,7 @@ body {
     transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
     .hamburger {
         display: flex;
     }
@@ -129,16 +126,29 @@ body {
         position: absolute;
         top: 100%;
         right: 0;
-        width: 70vw;
+        width: 50vw;
         max-width: 100vw;
         background: rgba(0, 0, 0, 0.9);
-        padding: 0 1rem;
         flex-direction: column;
         transform: scaleY(0);
         transform-origin: top;
         transition: transform 0.3s ease, opacity 0.3s ease;
         opacity: 0;
         pointer-events: none;
+    }
+
+    .nav-separator {
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.7);
+        margin: 0 10%;
+    }
+
+    .nav-separator-top-edge {
+        margin-top: 0.5rem;
+    }
+
+    .nav-separator-bottom-edge {
+        margin-bottom: 0.5rem;
     }
 
     .nav-links.active {
@@ -148,9 +158,48 @@ body {
     }
 
     .nav-links a {
-        padding: 1rem 0;
+        margin: 0.5rem 0;
         text-align: center;
         width: 100%;
+    }
+
+    .nav-separator,
+    .nav-separator-top-edge,
+    .nav-separator-bottom-edge {
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.7);
+        margin: 0 10%;
+        transform: scaleX(0);
+        transform-origin: center;
+        opacity: 0;
+    }
+
+    .nav-links.active #sep1 {
+        animation: growLine 0.3s ease forwards;
+        animation-delay: 0.1s;
+    }
+    .nav-links.active #sep2 {
+        animation: growLine 0.3s ease forwards;
+        animation-delay: 0.15s;
+    }
+    .nav-links.active #sep3 {
+        animation: growLine 0.3s ease forwards;
+        animation-delay: 0.2s;
+    }
+    .nav-links.active #sep4 {
+        animation: growLine 0.3s ease forwards;
+        animation-delay: 0.25s;
+    }
+
+    @keyframes growLine {
+        0% {
+            transform: scaleX(0);
+            opacity: 0;
+        }
+        100% {
+            transform: scaleX(1);
+            opacity: 1;
+        }
     }
 }
 
@@ -185,6 +234,27 @@ section {
         transform: translateY(0);
     }
 }
+/* Strona główna */
+.video-section {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    padding: 2rem;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease both;
+    text-align: center;
+}
+
+.video-section h2 {
+    margin-bottom: 2rem;
+}
+
+.video-section iframe {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+}
+
 /* Galeria */
 .gallery-grid {
     display: grid;
