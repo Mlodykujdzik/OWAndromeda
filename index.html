@@ -10,18 +10,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     </head>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            if (typeof GLightbox !== "undefined") {
-                const lightbox = GLightbox({ selector: ".glightbox" });
-            }
-        });
-    </script>
+
     <body>
         <nav class="navbar">
             <div class="nav-container">
-                <div class="logo">Andromeda</div>
-                <button class="hamburger" aria-label="Menu">&#9776;</button>
+                <a href="#/" class="logo">Andromeda</a>
+                <div class="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div class="nav-links">
                     <a href="#/" data-link>Andromeda</a>
                     <a href="#/galeria" data-link>Galeria</a>
@@ -36,14 +34,5 @@
 
         <script src="router.js"></script>
         <script src="script.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const hamburger = document.querySelector(".hamburger");
-                const navLinks = document.querySelector(".nav-links");
-                hamburger.addEventListener("click", () => {
-                    navLinks.classList.toggle("active");
-                });
-            });
-        </script>
     </body>
 </html>
