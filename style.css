@@ -8,10 +8,22 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    background: url("assets/background.JPG") no-repeat center center fixed;
+    background: url("assets/background20.webp") no-repeat center center fixed;
     background-size: cover;
     color: white;
     overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url("/assets/background12.webp");
+  }
+}
+
+@media (min-width: 1600px) {
+  body {
+    background-image: url("/assets/background40.webp");
+  }
 }
 
 .navbar {
