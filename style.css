@@ -31,7 +31,7 @@ body {
     top: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(1px);
     z-index: 999;
 }
 .nav-container {
@@ -219,14 +219,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 2rem;
+    padding-top: 2rem;
     animation: fadeInUp 1s ease both;
 }
 
 .attraction-item {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
@@ -279,6 +279,10 @@ body {
         align-items: center;
     }
 
+    .attractions {
+        gap: 6rem;
+    }
+
     .attraction-image img {
         width: 70vw;
         height: auto;
@@ -295,7 +299,7 @@ main#app {
 }
 
 section {
-    margin: 100px auto;
+    margin: 50px auto;
     padding: 2rem;
     width: 90%;
     max-width: 1000px;
@@ -338,6 +342,10 @@ section {
 }
 
 /* Galeria */
+.gallery-container h1{
+    text-align: center;
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -356,4 +364,59 @@ section {
 
 .gallery-grid img:hover {
     transform: scale(1.1);
+}
+/* Kontakt */
+.kontakt {
+    padding: 20px;
+    text-align: center;
+}
+
+.kontakt-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.kontakt-platnosci,
+.kontakt-info {
+    flex: 1 1 250px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.kontakt-info a {
+    color: #6fa8dc;
+    text-decoration: none;
+}
+
+.kontakt-info a:hover {
+    text-decoration: underline;
+}
+
+.kontakt-map {
+    flex: 1 1 400px;
+    min-height: 300px;
+}
+/* Inne */
+.inne {
+    text-align: center;
+}
+.inne-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.inne-container p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.inne-container a {
+    color: #2c71b1;
+    text-decoration: none;
 }
